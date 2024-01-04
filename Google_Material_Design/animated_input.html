@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+            background: #000;
+        } */
+        .simple_div{
+            position: relative;
+            top:400px;
+            left: 700px;
+            height: 48px;
+        }
+        .simple_input{
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 330px;
+            height: 40px;
+            font-size: 16px;
+            padding:  0 10px;
+            border: 2px solid #5F6384;
+            background: transparent;
+            border-radius: 5px;
+            outline: none;
+            z-index: 1;
+        }
+        .simple_label{
+            position: absolute;
+            left:16px;
+            top: 12px;
+            padding: 0 2.5px;
+            color: #5F6384;
+            background-color: #fff;
+            transition: all ease 0.3s;
+        }
+        .simple_input:focus + .simple_label{
+            top: -7px;
+            left: 13px;
+            font-size: 12px;
+            color: #1A73EB;
+            font-weight: 500;
+            z-index: 1;
+        }
+        .simple_input:focus{
+            border: 2px solid #1A73EB;
+        }
+    </style>
+</head>
+<body>
+    <div class="simple_div">
+        <input type="text" class="simple_input" placeholder=" ">
+        <label for="" class="simple_label">Name or Email</label>
+    </div>
+</body>
+</html>
