@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+h1{
+  position:absolute;
+  top:0;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 4.5em;
+  height: 2.2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  transition: 0.4s;
+  border-radius: 30px;
+  border: 3px solid #6ca185;
+  background: #a6dbbf;
+  transform: scale(2.2); 
+}
+
+.slider:before {
+  background: url("https://docs.google.com/uc?export=download&id=19dVdtizaGRHgEycv0TqNbCGH3p9HNOm0");
+  opacity: 1;
+}
+
+.slider:after {
+  background: url("https://docs.google.com/uc?export=download&id=19VOSpBLwUmC1t-_uWD2qN3vzS76ET-Qj");
+  opacity: 0;
+}
+
+.slider:before, .slider:after {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 10;
+  transition: 0.4s;
+}
+
+.switch input:checked + .slider {
+  background: #043218;
+  border-color: #043218;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(2.0em);
+  opacity: 0;
+}
+
+.switch input:checked + .slider:after {
+  transform: translateX(2.0em);
+  opacity: 1;
+}
+
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #E2EBE6;; /* Initial background color */
+  transition: 0.4s;
+  z-index: -1; /* Place it behind other content */
+}
+
+/* Change background color when checkbox is checked */
+.switch input:checked ~ .overlay {
+  background-color: lightyellow; 
+}
+
+.switch .on,
+.switch .off {
+  position: absolute;
+  font-size: 0.8em; /* Adjust the size as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Prevents text from interfering with the switch functionality */
+  transition: opacity 0.3s ease-in-out; /* Apply ease-out transition */
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  user-select: none;
+}
+
+.switch .on {
+  left: 0.9em; /* Adjust the position as needed */
+  opacity: 0;
+  color: #0A6637;
+}
+
+.switch .off {
+  right: 0.9em; /* Adjust the position as needed */
+  color: #6CA185;
+}
+
+.switch input:checked + .slider .on {
+  opacity: 1; /* Hide 'On' when the switch is active */
+}
+
+.switch input:checked + .slider .off {
+  opacity: 0; /* Show 'Off' when the switch is active */
+}
+</style>
+</head>
+<body>
+    <h1 id="changes"> CLICK FOR SURPRISE</h1>
+<label class="switch">
+  <input type="checkbox" id="toggle" />
+  <span class="slider">
+    <span class="on">ON</span>
+    <span class="off">OFF</span>
+  </span>
+  <div class="overlay"></div>
+</label>
+<audio id="soundOn" src="https://docs.google.com/uc?export=download&id=1oEe1_NKb4h6N67hOePYOc8Guow8zsQy4"></audio>
+<audio id="soundOff" src="https://docs.google.com/uc?export=download&id=1NNi7Psu6cMhv7m_3zeX5j9X0KYXM8jh7"></audio>
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+    var checkbox = document.getElementById('toggle');
+    var soundOn = document.getElementById('soundOn');
+    var soundOff = document.getElementById('soundOff');
+    var changes = document.getElementById('changes');
+    checkbox.addEventListener('change', function () {
+      if (checkbox.checked) {
+        soundOn.play();
+        changes.innerHTML= "JO MARKS NHI DIYA USKI"
+      } else {
+        soundOn.pause();
+        soundOff.play();
+        changes.innerHTML = "CLICK FOR SURPRISE"
+      }
+    });
+  });
+
+
+</script>
+</body>
+</html>
