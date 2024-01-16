@@ -1,1 +1,2 @@
-Here i will put the daily things that i will learn and also put the reel i post on instagram
+HERE I PUT SOMETHING EVERYDAY THAT I LEARN
+EVEN THE SMALLEST THINGS 
