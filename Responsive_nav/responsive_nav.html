@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        *{
+            margin: 0;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 20px;
+                
+        }
+        .list ul{
+            display: flex;
+            list-style: none;
+            gap:20px;
+            align-items: center;
+            justify-content: right;
+        }
+        .btn{
+            display: none;
+        }
+        @media (max-width: 992px) {
+
+            .list{
+                opacity: 0;
+                transition: all ease 0.5s;
+            }
+            .list ul{
+                flex-direction: column;
+                position: absolute;
+                background: #000;
+                color: #fff;
+                padding: 30px;
+                right: 0;
+                top: 50px;
+                transition: all ease 0.5s;
+            }
+            .btn{
+                display: block;
+            }
+
+            .list.active{
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h3>Abishek</h3>
+        
+        <div class="list">
+        <ul >
+            
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>conatact</li>
+        </ul>
+        </div>
+        <div class="btn" ><i class='bx bx-menu bx-sm' ></i></div>
+    </nav>
+    <script>
+        var nav = document.getElementsByClassName("list")[0]
+        var buto = document.getElementsByClassName("btn")[0]
+        var butu = document.getElementById("btb")
+        buto.addEventListener('click', ()=>{
+            nav.classList.toggle('active');
+        })
+    </script>
+</body>
+</html>
