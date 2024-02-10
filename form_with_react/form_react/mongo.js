@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-mongoose.connect("mongodb+srv://Abishek_Newar:Abishek2002@cluster0.kkrveku.mongodb.net/form-login")
+mongoose.connect("url")
 .then(()=>{
     console.log("mongoDB connected");
 })
