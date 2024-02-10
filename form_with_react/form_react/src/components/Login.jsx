@@ -4,7 +4,7 @@ import { useNavigate, Link } from "react-router-dom"
 
 export default function Login(){
 
-    const history = useNavigate();
+    const navigate = useNavigate();
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     async function submit(e){
@@ -15,9 +15,9 @@ export default function Login(){
                 email,password
             })
             .then(res=>{
-                if(res.data="exist"){
-                    history('/home',{state:{id:email}})
-                }else if(res.data="notexist"){
+                if(res.data==="exist"){
+                    navigate('/home',{state:{id:email}})
+                }else if(res.data=="notexist"){
                     alert("User not found");
                 }
             })
